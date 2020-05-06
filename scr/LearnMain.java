@@ -42,6 +42,20 @@ public class LearnMain {
         System.out.println("вывод чисел больше 5: ");
         evaluate(list, n -> n > 5);
 
+        System.out.println("квадрат каждого числа : ");
+        list.stream()
+                .map((n) -> n * n)
+                .forEach(n -> {
+                    System.out.print(n + " ");
+                    System.out.print(":) ");
+                });
+        System.out.println();
+
+        System.out.println("cумма квадрат каждого числа : ");
+        int sum = list.stream().map(x -> x*x).reduce((x,y) -> x + y).get();
+        System.out.println(sum);
+
+
     }
 
     public static void evaluate(List<Integer> list, Predicate<Integer> predicate) {
